@@ -1,0 +1,20 @@
+{
+  "name": "bundle-analysis-server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "Maia Teegarden",
+  "license": "MIT",
+  "scripts": {
+    "start": "babel-node server.js"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "pretty-bytes": "^5.0.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  }
+}
