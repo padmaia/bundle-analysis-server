@@ -1,28 +1,9 @@
 const React = require('react');
 const { renderToString } = require('react-dom/server');
-// TODO: use atlaskit table?
-const ReactTable = require('react-table').default;
 const fs = require('fs');
 const prettyBytes = require('pretty-bytes');
 
 function BundleAnalysisReport({ results }) {
-  let data = results.map(result => ({
-    name: result.entry.name,
-    outputBytes: result.sizes.outputBytes ? prettyBytes(result.sizes.outputBytes) : 'err',
-    outputBytesGz: result.sizes.outputBytesGz ? prettyBytes(result.sizes.outputBytesGz) : 'err',
-  }));
-  
-  let columns = [{
-    Header: 'Name',
-    accessor: 'name',
-  }, {
-    Header: 'min',
-    accessor: 'outputBytes',
-  }, {
-    Header: 'min+gz',
-    accessor: 'outputBytesGz',
-  }];
-
   return (
     <html>
       <head>
