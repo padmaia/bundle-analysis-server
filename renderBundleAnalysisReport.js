@@ -4,6 +4,19 @@ const fs = require('fs');
 const prettyBytes = require('pretty-bytes');
 
 function BundleAnalysisReport({ results }) {
+  results.sort((a, b) => {
+    let { outputBytesGz: sizeA } = a.sizes;
+    let { outputBytesGz: sizeB } = b.sizes;
+
+    if (sizeA && sizeB) {
+      return sizeB - sizeA;
+    } else if (sizeB) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
+
   return (
     <html>
       <head>
